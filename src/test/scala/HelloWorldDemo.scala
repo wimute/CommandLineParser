@@ -26,10 +26,11 @@ object HelloWorldDemo {
     /** Define the help option */
     val helpOption = so( List( "-h", "--help" ), "Print this help", help( "HelloWorldDemo", "You can add and subtract..." ) )
 
-    /** Define the start value. If this option is set, than return the number specified 
-    * on command line (_.toInt), otherwise return ''0'' as default
+    /** Define the start value. If this option is set, than return the number given as 
+    * corresponding parameter (_.toInt), otherwise return ''0'' as default.
     * ''sop'' is short for (s)ingle (o)ption with (p)arameter
-    * There is also ''so'' (s)ingle (o)ption and ''sopl'' (s)ingle (o)ption with (p)arameter (l)ist*/
+    * There is also ''so'' (s)ingle (o)ption and ''sopl'' (s)ingle (o)ption with (p)arameter (l)ist
+    * See trait CndLineParser for details*/
     val startValOption = sop( "--startVal", "<int>", "Start value for addition", _.toInt, 0 )
 
     /** Defines the function which takes all parameters. In this case all parameters will 
