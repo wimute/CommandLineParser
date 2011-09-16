@@ -1,0 +1,11 @@
+Command line parser
+===================
+Simple library which helps to attach functions to comand line options. See src/test/scala/HelloWorldDemo.scala for as an example.
+
+You can run this example with sbt.
+Enter "test:run --startVal 25 1 1 2 3 5" on sbt-prompt and choose HelloWorldDemo for execution.
+
+Copyright
+=========
+(c) 2011 Christian Buschmann, released under the BSD license
+
