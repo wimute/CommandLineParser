@@ -1,7 +1,7 @@
-# Command line parser
+# Command line parser for scala
 
 ## Short description
-Simple library which helps to attach values / functions to comand line options. 
+Simple scala library which helps to attach values / functions to comand line options. 
 
 ## Long description
 Basicly you can define a command line option as a scala `val`. Every option is 
