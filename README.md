@@ -27,6 +27,7 @@ for your program is generated.
 
 The trait CmdLineParser helps you to build the options. There are are three 
 types of options you can define with functions from CmdLineParser:
+
   * so: An option without any parameter (e.g. --verbose)
   * sop: An option which a takes parameter (e.g. --file <filename>)
   * sopl: An option which takes a list of parameters (e.g. --files <filename>,<filename>,...)
@@ -38,7 +39,7 @@ E.g. above aOption could be defined this way:
         val aOption = so( "-a", "<int>", "Integer value as parameter for this option", _.toInt, 0 )
       }
 
-  The parameter `\_.toInt` is the successVal, which will be evaluated, if the option is found
+  The parameter `_.toInt` is the successVal, which will be evaluated, if the option is found
   on command line.
   The parameter `0` is the defaultVal, which will be returned, if the option is not found
   on command line.
@@ -47,7 +48,7 @@ E.g. above aOption could be defined this way:
 For all non-option parameters on the command line you can use the function "parameters" from
 CmdLineParser.
 
-    parameters( "<aString> <aString> ...", "Strings to echo", \_.foreach( string => println ( string ) ) )  
+    parameters( "<aString> <aString> ...", "Strings to echo", _.foreach( string => println ( string ) ) )  
 
 If you want to get the generated program help just call the help function on CmdLineParser
 
@@ -59,7 +60,7 @@ For a more detailed description see src/test/scala/HelloWorldDemo.scala as an ex
 and see the methods in src/main/scala/CmdLineParser.scala
 
 You can run the HelloWorld example with sbt.
-Enter "test:run 1 1 2 3 5 --startVal 25" on sbt-prompt and choose HelloWorldDemo for execution.
+Enter `test:run 1 1 2 3 5 --startVal 25` on sbt-prompt and choose HelloWorldDemo for execution.
 
 ## Copyright
 (c) 2011 Christian Buschmann, released under the BSD license
