@@ -1,6 +1,6 @@
 Command line parser
 ===================
-Simple library which helps to attach functions to comand line options. 
+Simple library which helps to attach values / functions to comand line options. 
 
 Basicly you can define a command line option as a scala val. Every option is 
 a parser on its own, which takes an Array[String] and results to the 
@@ -8,15 +8,15 @@ expected value ( type CmdLineParser[A] is a function Array[String] => A ).
   
  def main( args: Array[String] ): Unit = {
    ...
-   val aOption: CmdLineParser[Int] = ...
-   aOption( args ) // Returns the Int-value provided by this option
+   val aOption: CmdLineParser[Int] = ... //definition of an "-a" option which returns an Integer. See below for instantiation
+   aOption( args ) //Returns the Int-value provided by this option
 
 Parsers can be combined in a monadic style.
 E.g. if function func1 needs the value from option a, you can do this:
 
-    val program = for{
-                    a <- aOption 
-                  }yield func1( a )
+    val program: CmdLineParser[Int] = for{
+                                        a <- aOption 
+                                      }yield func1( a )
     program( args )
 
 You can also add a description to every option, so that a complete formatted help 
