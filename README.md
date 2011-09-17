@@ -10,9 +10,10 @@ expected value ( `type CmdLineParser[A]` is a function `Array[String] => A` ).
   
     def main( args: Array[String] ): Unit = {
       ...
-      //definition of an "-a" option which returns an Integer. See below for instantiation
-      val aOption: CmdLineParser[Int] = ... 
+      val aOption: CmdLineParser[Int] = ... //definition of an "-a" option which returns an Integer
       aOption( args ) //Returns the Int-value provided by this option
+
+How to get an instance for aOption is described below.
 
 Parsers can be combined in a monadic style.
 E.g. if function func1 needs the value from option a, you can do this:
