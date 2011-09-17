@@ -19,7 +19,7 @@ E.g. if function func1 needs the value from option a, you can do this:
                   }yield func1( a )
     program( args )
 
-You can also add a description to ever option, so that a complete formatted help 
+You can also add a description to every option, so that a complete formatted help 
 for your program is generated.
 
 The trait CmdLineParser helps you to build the options. There are are three 
@@ -28,7 +28,7 @@ types of options you can define with functions from CmdLineParser:
   sop: An option which a takes parameter (e.g. --file <filename>)
   sopl: An option which takes a list of parameters (e.g. --files <filename>,<filename>,...)
 
-E.g. above aOption could be defined in this way:
+E.g. above aOption could be defined this way:
   val clp = 
     new CmdLineParser{
       val aOption = so( "-a", "<int>", "Integer value as parameter for this option", _.toInt, 0 )
