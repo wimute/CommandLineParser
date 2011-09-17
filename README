@@ -40,7 +40,7 @@ E.g. above aOption could be defined this way:
   on command line.
   If you skip the defaultVal, then the return value will be wrapped into an Option[A].
 
-For all non-option parameters on the command line you can use the function parameter on
+For all non-option parameters on the command line you can use the function "parameters" from
 CmdLineParser.
   parameters( "<aString> <aString> ...", "Strings to echo", _.foreach( string => println ( string ) ) )  
 
