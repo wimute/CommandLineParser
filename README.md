@@ -8,11 +8,11 @@ Basicly you can define a command line option as a scala `val`. Every option is
 a parser on its own, which takes an `Array[String]` and results to the 
 expected value ( `type CmdLineParser[A]` is a function `Array[String] => A` ).
   
-   def main( args: Array[String] ): Unit = {
-     ...
+    def main( args: Array[String] ): Unit = {
+      ...
       //definition of an "-a" option which returns an Integer. See below for instantiation
-     val aOption: CmdLineParser[Int] = ... 
-     aOption( args ) //Returns the Int-value provided by this option
+      val aOption: CmdLineParser[Int] = ... 
+      aOption( args ) //Returns the Int-value provided by this option
 
 Parsers can be combined in a monadic style.
 E.g. if function func1 needs the value from option a, you can do this:
@@ -45,12 +45,12 @@ E.g. above aOption could be defined this way:
   on command line.
   If you skip the defaultVal, then the return value will be wrapped into an `Option[A]`.
 
-For all non-option parameters on the command line you can use the function "parameters" from
+For all non-option parameters on the command line you can use the function `parameters` from
 CmdLineParser.
 
     parameters( "<aString> <aString> ...", "Strings to echo", _.foreach( string => println ( string ) ) )  
 
-If you want to get the generated program help just call the help function on CmdLineParser
+If you want to get the generated program help just call the `help` function from CmdLineParser
 
     println( clp.help )
 
