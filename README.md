@@ -1,7 +1,12 @@
 Command line parser
 ===================
+
+Short description
+-----------------
 Simple library which helps to attach values / functions to comand line options. 
 
+Long description
+----------------
 Basicly you can define a command line option as a scala val. Every option is 
 a parser on its own, which takes an Array[String] and results to the 
 expected value ( type CmdLineParser[A] is a function Array[String] => A ).
@@ -47,6 +52,9 @@ CmdLineParser.
 If you want to get the generated program help just call the help function on CmdLineParser
   println( clp.help )
 
+Further reading and example
+---------------------------
+
 For a more detailed description see src/test/scala/HelloWorldDemo.scala as an example
 and see the methods in src/main/scala/CmdLineParser.scala
 
@@ -54,6 +62,6 @@ You can run the HelloWorld example with sbt.
 Enter "test:run 1 1 2 3 5 --startVal 25" on sbt-prompt and choose HelloWorldDemo for execution.
 
 Copyright
-=========
+---------
 (c) 2011 Christian Buschmann, released under the BSD license
 
