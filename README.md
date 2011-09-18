@@ -1,9 +1,9 @@
 # Command line parser for scala
 
-## Short description
 Simple scala library which helps to attach values / functions to comand line options. 
 
-## Long description
+## How to use options in your program
+
 Basicly you can define a command line option as a scala `val`. Every option is 
 a parser on its own, which takes an `Array[String]` and results to the 
 expected value ( `type CmdLineParser[A]` is a function `Array[String] => A` ).
@@ -25,6 +25,8 @@ E.g. if function func1 needs the value from option a, you can do this:
 
 You can also add a description to every option, so that a complete formatted help 
 for your program is generated.
+
+## How to create options
 
 The trait CmdLineParser helps you to build the options. There are are three 
 types of options you can define with functions from CmdLineParser:
@@ -50,6 +52,8 @@ For all non-option parameters on the command line you can use the function `para
 CmdLineParser.
 
     val params = parameters( "<aString> <aString> ...", "Strings to echo", _.foreach( string => println ( string ) ) )
+
+## How to generate program help
 
 If you want to get the generated program help just call the `help` function from CmdLineParser
 
