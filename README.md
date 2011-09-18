@@ -18,7 +18,7 @@ How to get an instance for aOption is described below.
 Parsers can be combined in a monadic style.
 E.g. if function func1 needs the value from option a, you can do this:
 
-      val program: CmdLineParser[Int] = for{
+      def program: CmdLineParser[Int] = for{
                                           a <- aOption 
                                         }yield func1( a )
       program( args )
@@ -30,14 +30,14 @@ The trait CmdLineParser helps you to build the options. There are are three
 types of options you can define with functions from CmdLineParser:
 
   * so: An option without any parameter (e.g. --verbose)
-  * sop: An option which a takes parameter (e.g. --file <filename>)
+  * sop: An option which takes a parameter (e.g. --file <filename>)
   * sopl: An option which takes a list of parameters (e.g. --files <filename>,<filename>,...)
 
 E.g. above aOption could be defined this way:
 
     val clp = 
       new CmdLineParser{
-        val aOption = so( "-a", "<int>", "Integer value as parameter for this option", _.toInt, 0 )
+        val aOption = sop( "-a", "<int>", "Integer value as parameter for this option", _.toInt, 0 )
       }
 
   The parameter `_.toInt` is the successVal, which will be evaluated, if the option is found
@@ -49,11 +49,25 @@ E.g. above aOption could be defined this way:
 For all non-option parameters on the command line you can use the function `parameters` from
 CmdLineParser.
 
-    parameters( "<aString> <aString> ...", "Strings to echo", _.foreach( string => println ( string ) ) )  
+    val params = parameters( "<aString> <aString> ...", "Strings to echo", _.foreach( string => println ( string ) ) )
 
 If you want to get the generated program help just call the `help` function from CmdLineParser
 
-    println( clp.help )
+    println( clp.help( "ReadmeDemo", "Description for program ReadmeDemo" ) )
+
+should output
+
+> Usage: ReadmeDemo [OPTIONS] <aString> <aString> ...
+> 
+> Description for program ReadmeDemo
+> 
+> OPTIONS
+> 
+> -a <int>  Integer value as parameter for this option
+> 
+> PARAMETERS
+> 
+> <aString> <aString> ...  Strings to echo 
 
 ## Further reading and example
 
