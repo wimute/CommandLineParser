@@ -57,17 +57,17 @@ If you want to get the generated program help just call the `help` function from
 
 should output
 
-> Usage: ReadmeDemo [OPTIONS] <aString> <aString> ...
+> Usage: ReadmeDemo [OPTIONS] \<aString\> \<aString\> ...
 > 
 > Description for program ReadmeDemo
 > 
 > OPTIONS
 > 
-> -a <int>  Integer value as parameter for this option
+> -a \<int\>  Integer value as parameter for this option
 > 
 > PARAMETERS
 > 
-> <aString> <aString> ...  Strings to echo 
+> \<aString\> \<aString\> ...  Strings to echo 
 
 ## Further reading and example
 
