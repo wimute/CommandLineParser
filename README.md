@@ -32,8 +32,8 @@ The trait CmdLineParser helps you to build the options. There are are three
 types of options you can define with functions from CmdLineParser:
 
   * so: An option without any parameter (e.g. --verbose)
-  * sop: An option which takes a parameter (e.g. --file <filename>)
-  * sopl: An option which takes a list of parameters (e.g. --files <filename>,<filename>,...)
+  * sop: An option which takes a parameter (e.g. --file \<filename\>)
+  * sopl: An option which takes a list of parameters (e.g. --files \<filename\>,\<filename\>,...)
 
 E.g. above aOption could be defined this way:
 
